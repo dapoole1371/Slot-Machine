@@ -74,7 +74,7 @@ namespace Slot_Machine
             {
                 userCredits -= bet;
                 credits.Text = $"Credits: {userCredits}";
-                for (int i = 0; i < 36; i++)
+                for (int i = 0; i < 26; i++)
                 {
                     //Spin Wheel 1
                     wheel1val1 = wheel1val2;
@@ -126,17 +126,17 @@ namespace Slot_Machine
                         await Task.Delay(100);
                     }
 
-                    if (i <= 20 && i > 10)
+                    if (i <= 17 && i > 10)
                     {
                         await Task.Delay(200);
                     }
 
-                    if (i <= 30 && i > 20)
+                    if (i <= 22 && i > 17)
                     {
                         await Task.Delay(300);
                     }
 
-                    if (i <= 35 && i > 30)
+                    if (i <= 25 && i > 22)
                     {
                         await Task.Delay(400);
                     }
@@ -150,30 +150,30 @@ namespace Slot_Machine
                 }
                 //Win Table
                 //Single Win
-                if (wheel1 == 1) total += 5;
+                if (wheel1 == 1) total += 1;
                 //Double Win
-                if (wheel1 == 1 && wheel2 == 1) total += 10;
-                if (wheel1 == 2 && wheel2 == 2) total += 12;
-                if (wheel1 == 3 && wheel2 == 3) total += 14;
-                if (wheel1 == 4 && wheel2 == 4) total += 16;
+                if (wheel1 == 1 && wheel2 == 1) total += 3;
+                if (wheel1 == 2 && wheel2 == 2) total += 3;
+                if (wheel1 == 3 && wheel2 == 3) total += 3;
+                if (wheel1 == 4 && wheel2 == 4) total += 3;
                 //Triple Win
-                if (wheel1 == 1 && wheel2 == 1 && wheel3 == 1) total += 20;
-                if (wheel1 == 2 && wheel2 == 2 && wheel3 == 2) total += 24;
-                if (wheel1 == 3 && wheel2 == 3 && wheel3 == 3) total += 28;
-                if (wheel1 == 4 && wheel2 == 4 && wheel3 == 4) total += 32;
+                if (wheel1 == 1 && wheel2 == 1 && wheel3 == 1) total += 7;
+                if (wheel1 == 2 && wheel2 == 2 && wheel3 == 2) total += 7;
+                if (wheel1 == 3 && wheel2 == 3 && wheel3 == 3) total += 7;
+                if (wheel1 == 4 && wheel2 == 4 && wheel3 == 4) total += 7;
                 //Quad Win
-                if (wheel1 == 1 && wheel2 == 1 && wheel3 == 1 && wheel4 == 1) total += 30;
-                if (wheel1 == 2 && wheel2 == 2 && wheel3 == 2 && wheel4 == 2) total += 40;
-                if (wheel1 == 3 && wheel2 == 3 && wheel3 == 3 && wheel4 == 3) total += 50;
-                if (wheel1 == 4 && wheel2 == 4 && wheel3 == 4 && wheel4 == 4) total += 75;
+                if (wheel1 == 1 && wheel2 == 1 && wheel3 == 1 && wheel4 == 1) total += 12;
+                if (wheel1 == 2 && wheel2 == 2 && wheel3 == 2 && wheel4 == 2) total += 12;
+                if (wheel1 == 3 && wheel2 == 3 && wheel3 == 3 && wheel4 == 3) total += 12;
+                if (wheel1 == 4 && wheel2 == 4 && wheel3 == 4 && wheel4 == 4) total += 12;
                 //Quint Win
-                if (wheel1 == 1 && wheel2 == 1 && wheel3 == 1 && wheel4 == 1 && wheel5 == 1) total += 50;
-                if (wheel1 == 2 && wheel2 == 2 && wheel3 == 2 && wheel4 == 2 && wheel5 == 2) total += 70;
-                if (wheel1 == 3 && wheel2 == 3 && wheel3 == 3 && wheel4 == 3 && wheel5 == 3) total += 90;
-                if (wheel1 == 4 && wheel2 == 4 && wheel3 == 4 && wheel4 == 4 && wheel5 == 4) total += 125;
+                if (wheel1 == 1 && wheel2 == 1 && wheel3 == 1 && wheel4 == 1 && wheel5 == 1) total += 30;
+                if (wheel1 == 2 && wheel2 == 2 && wheel3 == 2 && wheel4 == 2 && wheel5 == 2) total += 30;
+                if (wheel1 == 3 && wheel2 == 3 && wheel3 == 3 && wheel4 == 3 && wheel5 == 3) total += 30;
+                if (wheel1 == 4 && wheel2 == 4 && wheel3 == 4 && wheel4 == 4 && wheel5 == 4) total += 30;
 
-                userCredits += total;
-                Win.Text = $"Win: {total}";
+                userCredits += total*bet;
+                Win.Text = $"Win: {total*bet}";
                 credits.Text = $"Credits: {userCredits}";
             }
         }
@@ -181,6 +181,33 @@ namespace Slot_Machine
         private async void SpinButton_Click(object sender, RoutedEventArgs e)
         {
            await Spin();
+        }
+
+        private void Decrease_Click(object sender, RoutedEventArgs e)
+        {
+            if (userCredits >= bet - 1)
+            {
+                bet -= 1;
+                BetDisplay.Text = $"Bet: {bet}";
+            }
+
+            if (userCredits <= bet - 1)
+            {
+                MessageBox.Show("Sorry you don't have enough credits for this!");
+            }
+        }
+
+        private void Increase_Click(object sender, RoutedEventArgs e)
+        {
+            if (userCredits >= bet + 1)
+            {
+                bet += 1;
+                BetDisplay.Text = $"Bet: {bet}";
+            }
+            if (userCredits <= bet + 1)
+            {
+                MessageBox.Show("Sorry you don't have enough credits for this!");
+            }
         }
     }
 }
