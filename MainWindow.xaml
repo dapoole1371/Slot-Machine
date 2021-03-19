@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Slot_Machine"
         mc:Ignorable="d"
-        Title="MainWindow" Height="620" Width="585" ResizeMode="NoResize" >
+        Title="MainWindow" Height="640" Width="585" ResizeMode="NoResize" >
     <Window.Resources>
         <ResourceDictionary>
-            <ImageSource x:Key="1">StaticResource/1.png</ImageSource>
-            <ImageSource x:Key="2">StaticResource/2.png</ImageSource>
-            <ImageSource x:Key="3">StaticResource/3.png</ImageSource>
-            <ImageSource x:Key="4">StaticResource/4.png</ImageSource>
+            <ImageSource x:Key="1">StaticResource/Earth.png</ImageSource>
+            <ImageSource x:Key="2">StaticResource/Mars.png</ImageSource>
+            <ImageSource x:Key="3">StaticResource/Jupiter.png</ImageSource>
+            <ImageSource x:Key="4">StaticResource/Shuttle.png</ImageSource>
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
@@ -34,29 +34,29 @@
             <RowDefinition Height="90"/>
             <RowDefinition Height="90"/>
         </Grid.RowDefinitions>
-        <Image x:Name="_1_1" Grid.Column="1" Grid.Row="3" Source="StaticResource/1.png"/>
-        <Image x:Name="_1_2" Grid.Column="1" Grid.Row="4" Source="StaticResource/2.png"/>
-        <Image x:Name="_1_3" Grid.Column="1" Grid.Row="5" Source="StaticResource/3.png"/>
-        <Image x:Name="_1_4" Grid.Column="1" Grid.Row="6" Source="StaticResource/4.png"/>
-        <Image x:Name="_2_1" Grid.Column="2" Grid.Row="3" Source="StaticResource/2.png"/>
-        <Image x:Name="_2_2" Grid.Column="2" Grid.Row="4" Source="StaticResource/3.png"/>
-        <Image x:Name="_2_3" Grid.Column="2" Grid.Row="5" Source="StaticResource/4.png"/>
-        <Image x:Name="_2_4" Grid.Column="2" Grid.Row="6" Source="StaticResource/1.png"/>
+        <Image x:Name="_1_1" Grid.Column="1" Grid.Row="3" Source="StaticResource/Earth.png"/>
+        <Image x:Name="_1_2" Grid.Column="1" Grid.Row="4" Source="StaticResource/Mars.png"/>
+        <Image x:Name="_1_3" Grid.Column="1" Grid.Row="5" Source="StaticResource/Jupiter.png"/>
+        <Image x:Name="_1_4" Grid.Column="1" Grid.Row="6" Source="StaticResource/Shuttle.png"/>
+        <Image x:Name="_2_1" Grid.Column="2" Grid.Row="3" Source="StaticResource/Mars.png"/>
+        <Image x:Name="_2_2" Grid.Column="2" Grid.Row="4" Source="StaticResource/Jupiter.png"/>
+        <Image x:Name="_2_3" Grid.Column="2" Grid.Row="5" Source="StaticResource/Shuttle.png"/>
+        <Image x:Name="_2_4" Grid.Column="2" Grid.Row="6" Source="StaticResource/Earth.png"/>
 
-        <Image x:Name="_3_1" Grid.Column="3" Grid.Row="3" Source="StaticResource/3.png"/>
-        <Image x:Name="_3_2" Grid.Column="3" Grid.Row="4" Source="StaticResource/4.png"/>
-        <Image x:Name="_3_3" Grid.Column="3" Grid.Row="5" Source="StaticResource/1.png"/>
-        <Image x:Name="_3_4" Grid.Column="3" Grid.Row="6" Source="StaticResource/2.png"/>
+        <Image x:Name="_3_1" Grid.Column="3" Grid.Row="3" Source="StaticResource/Jupiter.png"/>
+        <Image x:Name="_3_2" Grid.Column="3" Grid.Row="4" Source="StaticResource/Shuttle.png"/>
+        <Image x:Name="_3_3" Grid.Column="3" Grid.Row="5" Source="StaticResource/Earth.png"/>
+        <Image x:Name="_3_4" Grid.Column="3" Grid.Row="6" Source="StaticResource/Mars.png"/>
 
-        <Image x:Name="_4_1" Grid.Column="4" Grid.Row="3" Source="StaticResource/4.png"/>
-        <Image x:Name="_4_2" Grid.Column="4" Grid.Row="4" Source="StaticResource/1.png"/>
-        <Image x:Name="_4_3" Grid.Column="4" Grid.Row="5" Source="StaticResource/2.png"/>
-        <Image x:Name="_4_4" Grid.Column="4" Grid.Row="6" Source="StaticResource/3.png"/>
+        <Image x:Name="_4_1" Grid.Column="4" Grid.Row="3" Source="StaticResource/Shuttle.png"/>
+        <Image x:Name="_4_2" Grid.Column="4" Grid.Row="4" Source="StaticResource/Earth.png"/>
+        <Image x:Name="_4_3" Grid.Column="4" Grid.Row="5" Source="StaticResource/Mars.png"/>
+        <Image x:Name="_4_4" Grid.Column="4" Grid.Row="6" Source="StaticResource/Jupiter.png"/>
 
-        <Image x:Name="_5_1" Grid.Column="5" Grid.Row="3" Source="StaticResource/1.png"/>
-        <Image x:Name="_5_2" Grid.Column="5" Grid.Row="4" Source="StaticResource/2.png"/>
-        <Image x:Name="_5_3" Grid.Column="5" Grid.Row="5" Source="StaticResource/3.png"/>
-        <Image x:Name="_5_4" Grid.Column="5" Grid.Row="6" Source="StaticResource/4.png"/>
+        <Image x:Name="_5_1" Grid.Column="5" Grid.Row="3" Source="StaticResource/Earth.png"/>
+        <Image x:Name="_5_2" Grid.Column="5" Grid.Row="4" Source="StaticResource/Mars.png"/>
+        <Image x:Name="_5_3" Grid.Column="5" Grid.Row="5" Source="StaticResource/Jupiter.png"/>
+        <Image x:Name="_5_4" Grid.Column="5" Grid.Row="6" Source="StaticResource/Shuttle.png"/>
 
         <TextBlock x:Name="Win" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2" Grid.RowSpan="2"
                    Background="DimGray" Height="35" Width="175" Margin="0 0 24 15"
@@ -89,5 +89,41 @@
                 Height="39" Width="84" Margin="10 0 0 26" FontSize="18"
                 BorderThickness="2,2,2,2" BorderBrush="Black" 
                 Background="DarkGreen" Content="Increase" FontWeight="Bold" Click="Increase_Click"></Button>
+        <Button Name="Plus10"  Grid.Column="4" Grid.Row="7" Height="40" Margin="6,55,59,-5"
+                BorderThickness="3" BorderBrush="Black" RenderTransformOrigin="-3.443,-0.177" Content="+10" FontSize="18" FontWeight="Bold" Click="Plus10_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF24DA45" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Name="Plus5" Grid.Column="3" Grid.Row="7" Height="40" Margin="68,55,105,-5"
+            BorderThickness="3" BorderBrush="Black" RenderTransformOrigin="-3.443,-0.177" Content="+5" FontSize="18" FontWeight="Bold" Grid.ColumnSpan="2" Click="Plus5_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF34F93D" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Name="Minus10" Grid.Column="3" Grid.Row="7" Height="40" Margin="22,55,44,-5"
+            BorderThickness="3" BorderBrush="Black" RenderTransformOrigin="-3.443,-0.177" Content="-10" FontSize="18" FontWeight="Bold" Click="Minus10_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFFF1F1F" Offset="0.596"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Name="Minus5" Grid.Column="2" Grid.Row="7" Height="40" Margin="84,55,90,-5"
+            BorderThickness="3" BorderBrush="Black" RenderTransformOrigin="-3.443,-0.177" Content="-5" FontSize="18" FontWeight="Bold" Grid.ColumnSpan="2" Click="Minus5_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFFF2626" Offset="0.704"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>

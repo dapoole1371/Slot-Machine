@@ -188,12 +188,18 @@ namespace Slot_Machine
             if (userCredits >= bet - 1)
             {
                 bet -= 1;
+                if (bet < 1)
+                {
+                    bet = 1;
+                }
                 BetDisplay.Text = $"Bet: {bet}";
             }
 
             if (userCredits <= bet - 1)
             {
                 MessageBox.Show("Sorry you don't have enough credits for this!");
+                bet = userCredits;
+                BetDisplay.Text = $"Bet: {bet}";
             }
         }
 
@@ -204,9 +210,71 @@ namespace Slot_Machine
                 bet += 1;
                 BetDisplay.Text = $"Bet: {bet}";
             }
-            if (userCredits <= bet + 1)
+            if (userCredits < bet + 1)
             {
                 MessageBox.Show("Sorry you don't have enough credits for this!");
+            }
+        }
+
+        private void Plus10_Click(object sender, RoutedEventArgs e)
+        {
+            if (userCredits >= bet + 10)
+            {
+                bet += 10;
+                BetDisplay.Text = $"Bet: {bet}";
+            }
+            if (userCredits <= bet + 10)
+            {
+                MessageBox.Show("You do not have enough credits for this!");
+            }
+        }
+
+        private void Plus5_Click(object sender, RoutedEventArgs e)
+        {
+            if (userCredits >= bet + 5)
+            {
+                bet += 5;
+                BetDisplay.Text = $"Bet: {bet}";
+            }
+            if (userCredits <= bet + 5)
+            {
+                MessageBox.Show("You do not have enough credits for this!");
+            }
+        }
+
+        private void Minus10_Click(object sender, RoutedEventArgs e)
+        {
+            if (userCredits >= bet - 10)
+            {
+                bet -= 10;
+                if (bet < 1)
+                {
+                    bet = 1;
+                }
+                BetDisplay.Text = $"Bet: {bet}";
+            }
+            if (userCredits <= bet - 10)
+            {
+                bet = userCredits;
+                MessageBox.Show("You do not have enough credits for this!");
+            }
+        }
+
+        private void Minus5_Click(object sender, RoutedEventArgs e)
+        {
+            if (userCredits >= bet - 5)
+            {
+                bet -= 5;
+                if (bet < 1)
+                {
+                    bet = 1;
+                }
+                BetDisplay.Text = $"Bet: {bet}";
+            }
+            if (userCredits <= bet - 5)
+            {
+                bet = userCredits;
+                MessageBox.Show("You do not have enough credits for this!");
             }
         }
     }
