@@ -58,39 +58,41 @@
         <Image x:Name="_5_3" Grid.Column="5" Grid.Row="5" Source="StaticResource/Jupiter.png"/>
         <Image x:Name="_5_4" Grid.Column="5" Grid.Row="6" Source="StaticResource/Shuttle.png"/>
 
-        <TextBlock x:Name="Win" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2" Grid.RowSpan="2"
-                   Background="DimGray" Height="35" Width="175" Margin="0 0 24 15"
-                   Text="Win: " FontSize="20"/>
-        <TextBlock x:Name="BetDisplay" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="3" Grid.RowSpan="2"
-                   Background="DimGray" Height="35" Width="175" Margin="27 0 0 15"
-                   Text="Bet: 10" FontSize="22"/>
-        <TextBlock x:Name="credits" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="2"
-                   Background="DimGray" Height="35" Width="330" Margin="81 0 0 54"
-                   Text="Credits: " FontSize="22"/>
         <Image Grid.ColumnSpan="8" Grid.Row="0"  Width="570" Height="615" Source="StaticResource/background.png" Margin="0,0,0,-16" Grid.RowSpan="8"/>
+
+        <TextBox x:Name="Win" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2" Grid.RowSpan="2"
+                   Background="#FFCECFC8" Height="35" Width="175" Margin="0 0 24 15"
+                   Text="Win: " FontSize="20" BorderThickness="2" BorderBrush="Black" IsReadOnly="True"/>
+        <TextBox x:Name="BetDisplay" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="3" Grid.RowSpan="2"
+                   Background="#FFCECFC8" Height="35" Width="175" Margin="27 0 0 15"
+                   Text="Bet: 10" FontSize="22" BorderThickness="2" BorderBrush="Black" IsReadOnly="True"/>
+        <TextBox x:Name="credits" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="2"
+                   Background="#FFCECFC8" Height="35" Width="330" Margin="81 0 0 54"
+                   Text="Credits: " FontSize="22" BorderThickness="2" BorderBrush="Black" IsReadOnly="True"/>
         <TextBlock Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="5" Height="60" 
                    Margin="0 20 0 0" Text="DAVE'S SLOT MACHINE" HorizontalAlignment="Center" FontSize="48" FontFamily="Impact" FontStretch="Normal" FontWeight="Bold"></TextBlock>
-        <Button x:Name="SpinButton" Height="65" Width="150" Margin="59,88,6,27" 
+        <Button x:Name="SpinButton" Margin="86,88,31,15" 
                 Content="SPIN" Click="SpinButton_Click" FontSize="48" 
-                BorderBrush="Black" FontWeight="Bold" Grid.Column="4" Grid.ColumnSpan="2"
-                Grid.Row="6" Grid.RowSpan="2">
+                FontWeight="Bold" Grid.Column="4" Grid.ColumnSpan="2"
+                Grid.Row="6" Grid.RowSpan="2" Opacity="0">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0.061"/>
-                    <GradientStop Color="#FF4ECD29" Offset="0.309"/>
+                    <GradientStop Color="White" Offset="0.309"/>
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
         <Button x:Name="Decrease" Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="2"
-                Height="39" Width="84" Margin="42 0 0 26" FontSize="18"
-                BorderThickness="2,2,2,2" BorderBrush="Black" 
+                Height="39" Width="84" Margin="52,13,80,39" FontSize="18"
+                BorderThickness="2,2,2,2" BorderBrush="Black" Opacity="0" 
                 Background="#FFBD0F0F" Content="Decrease" FontWeight="Bold" Click="Decrease_Click"></Button>
         <Button x:Name="Increase" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="2"
                 Height="39" Width="84" Margin="10 0 0 26" FontSize="18"
-                BorderThickness="2,2,2,2" BorderBrush="Black" 
+                BorderThickness="2,2,2,2" BorderBrush="Black" Opacity="0"
                 Background="DarkGreen" Content="Increase" FontWeight="Bold" Click="Increase_Click"></Button>
-        <Button Name="Plus10"  Grid.Column="4" Grid.Row="7" Height="40" Margin="6,55,59,-5"
-                BorderThickness="3" BorderBrush="Black" RenderTransformOrigin="-3.443,-0.177" Content="+10" FontSize="18" FontWeight="Bold" Click="Plus10_Click">
+        <Button Name="Plus10"  Grid.Column="4" Grid.Row="7" Height="40" Margin="16,56,49,-6"
+                BorderThickness="3" BorderBrush="Black" RenderTransformOrigin="-3.443,-0.177" Content="+10" 
+                FontSize="18" FontWeight="Bold" Click="Plus10_Click" Opacity="0">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -98,8 +100,9 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Name="Plus5" Grid.Column="3" Grid.Row="7" Height="40" Margin="68,55,105,-5"
-            BorderThickness="3" BorderBrush="Black" RenderTransformOrigin="-3.443,-0.177" Content="+5" FontSize="18" FontWeight="Bold" Grid.ColumnSpan="2" Click="Plus5_Click">
+        <Button Name="Plus5" Grid.Column="3" Grid.Row="7" Height="40" Margin="64,56,1,-6"
+            BorderThickness="3" BorderBrush="Black" RenderTransformOrigin="-3.443,-0.177"
+            Content="+5" FontSize="18" FontWeight="Bold" Click="Plus5_Click" Opacity="0">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -107,8 +110,9 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Name="Minus10" Grid.Column="3" Grid.Row="7" Height="40" Margin="22,55,44,-5"
-            BorderThickness="3" BorderBrush="Black" RenderTransformOrigin="-3.443,-0.177" Content="-10" FontSize="18" FontWeight="Bold" Click="Minus10_Click">
+        <Button Name="Minus10" Grid.Column="2" Grid.Row="7" Height="40" Margin="103,55,71,-5"
+            BorderThickness="3" BorderBrush="Black" RenderTransformOrigin="-3.443,-0.177"
+            Content="-10" FontSize="18" FontWeight="Bold" Click="Minus10_Click" Grid.ColumnSpan="2" Opacity="0">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -116,8 +120,9 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Name="Minus5" Grid.Column="2" Grid.Row="7" Height="40" Margin="84,55,90,-5"
-            BorderThickness="3" BorderBrush="Black" RenderTransformOrigin="-3.443,-0.177" Content="-5" FontSize="18" FontWeight="Bold" Grid.ColumnSpan="2" Click="Minus5_Click">
+        <Button Name="Minus5" Grid.Column="2" Grid.Row="7" Height="40" Margin="41,56,25,-6"
+            BorderThickness="3" BorderBrush="Black" RenderTransformOrigin="-3.443,-0.177"
+            Content="-5" FontSize="18" FontWeight="Bold" Click="Minus5_Click" Opacity="0">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -125,5 +130,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
+        <Button x:Name="MaxBetButton" Width="40" Grid.Column="1" HorizontalAlignment="Left" Margin="103,27,0,0" Grid.Row="7" VerticalAlignment="Top" 
+                Grid.ColumnSpan="2" Height="76" RenderTransformOrigin="0.538,0.53" Opacity="0" Click="MaxBetButton_Click"/>
     </Grid>
 </Window>
