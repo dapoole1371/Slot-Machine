@@ -69,7 +69,7 @@
                    Text="Credits: " FontSize="22"/>
         <Image Grid.ColumnSpan="8" Grid.Row="0"  Width="570" Height="615" Source="StaticResource/background.png" Margin="0,0,0,-16" Grid.RowSpan="8"/>
         <TextBlock Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="5" Height="60" 
-                   Margin="0 20 0 0" Text="SLOT MACHINE" HorizontalAlignment="Center" FontSize="48" FontFamily="Impact" FontStretch="Normal" FontWeight="Bold"></TextBlock>
+                   Margin="0 20 0 0" Text="DAVE'S SLOT MACHINE" HorizontalAlignment="Center" FontSize="48" FontFamily="Impact" FontStretch="Normal" FontWeight="Bold"></TextBlock>
         <Button x:Name="SpinButton" Height="65" Width="150" Margin="59,88,6,27" 
                 Content="SPIN" Click="SpinButton_Click" FontSize="48" 
                 BorderBrush="Black" FontWeight="Bold" Grid.Column="4" Grid.ColumnSpan="2"
