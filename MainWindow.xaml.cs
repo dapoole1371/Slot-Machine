@@ -15,7 +15,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Schema;
-using Random = System.Random;
 
 namespace Slot_Machine
 {
@@ -31,10 +30,9 @@ namespace Slot_Machine
         }
 
         private int total = 0;
-
         public int userCredits = 1000;
-
         public int bet = 10;
+
         //Wheel 1
         public int wheel1val1 = 1;
         public int wheel1val2 = 2;
@@ -61,11 +59,16 @@ namespace Slot_Machine
         public int wheel5Val3 = 3;
         public int wheel5val4 = 4;
         //Win Values
-        public int wheel1;
-        public int wheel2;
-        public int wheel3;
-        public int wheel4;
-        public int wheel5;
+        public int LineOneValOne;
+        public int LineOneValTwo;
+        public int LineOneValThree;
+        public int LineOneValFour;
+        public int LineOneValFive;
+        public int LineTwoValOne;
+        public int LineTwoValTwo;
+        public int LineTwoValThree;
+        public int LineTwoValFour;
+        public int LineTwoValFive;
 
         Random random = new Random();
         public bool spinning = false;
@@ -146,36 +149,73 @@ namespace Slot_Machine
                         }
 
                         total = 0;
-                        wheel1 = wheel1val2;
-                        wheel2 = wheel2val2;
-                        wheel3 = wheel3val2;
-                        wheel4 = wheel4val2;
-                        wheel5 = wheel5val2;
+                        LineOneValOne = wheel1val2;
+                        LineOneValTwo = wheel2val2;
+                        LineOneValThree = wheel3val2;
+                        LineOneValFour = wheel4val2;
+                        LineOneValFive = wheel5val2;
+                        LineTwoValOne = wheel1Val3;
+                        LineTwoValTwo = wheel2Val3;
+                        LineTwoValThree = wheel3Val3;
+                        LineTwoValFour = wheel4Val3;
+                        LineTwoValFive = wheel5Val3;
                     }
 
-                    //Win Table
+                    //Win Table Line 1
                     //Single Win
-                    if (wheel1 == 1) total += 1;
+                    if (LineOneValOne == 1) total += 1;
                     //Double Win
-                    if (wheel1 == 1 && wheel2 == 1) total += 3;
-                    if (wheel1 == 2 && wheel2 == 2) total += 3;
-                    if (wheel1 == 3 && wheel2 == 3) total += 3;
-                    if (wheel1 == 4 && wheel2 == 4) total += 3;
+                    if (LineOneValOne == 1 && LineOneValTwo == 1) total += 3;
+                    if (LineOneValOne == 2 && LineOneValTwo == 2) total += 3;
+                    if (LineOneValOne == 3 && LineOneValTwo == 3) total += 3;
+                    if (LineOneValOne == 4 && LineOneValTwo == 4) total += 3;
                     //Triple Win
-                    if (wheel1 == 1 && wheel2 == 1 && wheel3 == 1) total += 7;
-                    if (wheel1 == 2 && wheel2 == 2 && wheel3 == 2) total += 7;
-                    if (wheel1 == 3 && wheel2 == 3 && wheel3 == 3) total += 7;
-                    if (wheel1 == 4 && wheel2 == 4 && wheel3 == 4) total += 7;
+                    if (LineOneValOne == 1 && LineOneValTwo == 1 && LineOneValThree == 1) total += 7;
+                    if (LineOneValOne == 2 && LineOneValTwo == 2 && LineOneValThree == 2) total += 7;
+                    if (LineOneValOne == 3 && LineOneValTwo == 3 && LineOneValThree == 3) total += 7;
+                    if (LineOneValOne == 4 && LineOneValTwo == 4 && LineOneValThree == 4) total += 7;
                     //Quad Win
-                    if (wheel1 == 1 && wheel2 == 1 && wheel3 == 1 && wheel4 == 1) total += 12;
-                    if (wheel1 == 2 && wheel2 == 2 && wheel3 == 2 && wheel4 == 2) total += 12;
-                    if (wheel1 == 3 && wheel2 == 3 && wheel3 == 3 && wheel4 == 3) total += 12;
-                    if (wheel1 == 4 && wheel2 == 4 && wheel3 == 4 && wheel4 == 4) total += 12;
+                    if (LineOneValOne == 1 && LineOneValTwo == 1 && LineOneValThree == 1 && LineOneValFour == 1) total += 12;
+                    if (LineOneValOne == 2 && LineOneValTwo == 2 && LineOneValThree == 2 && LineOneValFour == 2) total += 12;
+                    if (LineOneValOne == 3 && LineOneValTwo == 3 && LineOneValThree == 3 && LineOneValFour == 3) total += 12;
+                    if (LineOneValOne == 4 && LineOneValTwo == 4 && LineOneValThree == 4 && LineOneValFour == 4) total += 12;
                     //Quint Win
-                    if (wheel1 == 1 && wheel2 == 1 && wheel3 == 1 && wheel4 == 1 && wheel5 == 1) total += 30;
-                    if (wheel1 == 2 && wheel2 == 2 && wheel3 == 2 && wheel4 == 2 && wheel5 == 2) total += 30;
-                    if (wheel1 == 3 && wheel2 == 3 && wheel3 == 3 && wheel4 == 3 && wheel5 == 3) total += 30;
-                    if (wheel1 == 4 && wheel2 == 4 && wheel3 == 4 && wheel4 == 4 && wheel5 == 4) total += 30;
+                    if (LineOneValOne == 1 && LineOneValTwo == 1 && LineOneValThree == 1 && LineOneValFour == 1 && LineOneValFive == 1) total += 30;
+                    if (LineOneValOne == 2 && LineOneValTwo == 2 && LineOneValThree == 2 && LineOneValFour == 2 && LineOneValFive == 2) total += 30;
+                    if (LineOneValOne == 3 && LineOneValTwo == 3 && LineOneValThree == 3 && LineOneValFour == 3 && LineOneValFive == 3) total += 30;
+                    if (LineOneValOne == 4 && LineOneValTwo == 4 && LineOneValThree == 4 && LineOneValFour == 4 && LineOneValFive == 4) total += 30;
+
+                    //Win Table Line 2
+                    //Single Win
+                    if (LineTwoValOne == 1) total += 1;
+                    //Double Win
+                    if (LineTwoValOne == 1 && LineTwoValTwo == 1) total += 3;
+                    if (LineTwoValOne == 2 && LineTwoValTwo == 2) total += 3;
+                    if (LineTwoValOne == 3 && LineTwoValTwo == 3) total += 3;
+                    if (LineTwoValOne == 4 && LineTwoValTwo == 4) total += 3;
+                    //Triple Win
+                    if (LineTwoValOne == 1 && LineTwoValTwo == 1 && LineTwoValThree == 1) total += 7;
+                    if (LineTwoValOne == 2 && LineTwoValTwo == 2 && LineTwoValThree == 2) total += 7;
+                    if (LineTwoValOne == 3 && LineTwoValTwo == 3 && LineTwoValThree == 3) total += 7;
+                    if (LineTwoValOne == 4 && LineTwoValTwo == 4 && LineTwoValThree == 4) total += 7;
+                    //Quad Win
+                    if (LineTwoValOne == 1 && LineTwoValTwo == 1 && LineTwoValThree == 1 && LineTwoValFour == 1) total += 12;
+                    if (LineTwoValOne == 2 && LineTwoValTwo == 2 && LineTwoValThree == 2 && LineTwoValFour == 2) total += 12;
+                    if (LineTwoValOne == 3 && LineTwoValTwo == 3 && LineTwoValThree == 3 && LineTwoValFour == 3) total += 12;
+                    if (LineTwoValOne == 4 && LineTwoValTwo == 4 && LineTwoValThree == 4 && LineTwoValFour == 4) total += 12;
+                    //Quint Win
+                    if (LineTwoValOne == 1 && LineTwoValTwo == 1 && LineTwoValThree == 1 && LineTwoValFour == 1 && LineTwoValFive == 1) total += 30;
+                    if (LineTwoValOne == 2 && LineTwoValTwo == 2 && LineTwoValThree == 2 && LineTwoValFour == 2 && LineTwoValFive == 2) total += 30;
+                    if (LineTwoValOne == 3 && LineTwoValTwo == 3 && LineTwoValThree == 3 && LineTwoValFour == 3 && LineTwoValFive == 3) total += 30;
+                    if (LineTwoValOne == 4 && LineTwoValTwo == 4 && LineTwoValThree == 4 && LineTwoValFour == 4 && LineTwoValFive == 4) total += 30;
+
+                    //Jackpot Win
+                    if (LineTwoValOne == LineTwoValTwo && LineTwoValOne == LineTwoValThree &&
+                        LineTwoValOne == LineTwoValFour && LineTwoValOne == LineTwoValFive &&
+                        LineTwoValOne == LineOneValOne && LineTwoValOne == LineOneValTwo &&
+                        LineTwoValOne == LineOneValThree && LineTwoValOne == LineOneValFour &&
+                        LineTwoValOne == LineOneValFive) total += 1000;
+
 
                     userCredits += total * bet;
                     Win.Text = $"Win: {total * bet}";
@@ -196,7 +236,7 @@ namespace Slot_Machine
             await Spin();
         }
 
-        private async void Decrease_Click(object sender, RoutedEventArgs e)
+        private void Decrease_Click(object sender, RoutedEventArgs e)
         {
             if (spinning == false)
             {
